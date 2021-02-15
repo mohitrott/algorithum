@@ -1,0 +1,1101 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html{line-height:1.15;-webkit-text-size-adjust:100%}
+body{margin:0;overflow:hidden;width: auto !important; overflow-x: hidden!important}
+main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+@font-face {
+    font-family: 'Frutiger';
+    src: url('fonts/Frutiger.woff2') format('woff2'),
+        url('fonts/Frutiger.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Frutiger';
+    src: url('fonts/FrutigerBold.woff2') format('woff2'),
+        url('fonts/FrutigerBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Frutiger';
+    src: url('fonts/FrutigerBoldItalic.woff2') format('woff2'),
+        url('fonts/FrutigerBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	user-select: none;
+}
+#wrapper{
+	width: 1380px;
+	height: 1080px;
+	background-size: contain;
+	font-family: 'Frutiger';
+    font-weight: normal;
+	font-style: normal;
+	box-sizing: border-box;
+	border-radius: 70px;
+	overflow: hidden;
+	background-color: #eeeeee;
+	border: 6px solid green;
+}
+
+.footerBg {
+	background-color: #666666;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 168px;
+}
+
+/* intro page */
+#intro{
+	width: 100%;
+	height: 1068px;
+	position: relative;
+	overflow: hidden;
+}
+#intro h2{
+	text-align: left;
+    color: #000;
+    font-size: 36.2px;
+    font-weight: bold;
+	margin: 65px 205px;
+	margin-bottom: 0px;
+    line-height: 1.6;
+}
+
+#intro .startButton{
+	position: absolute;
+	width: 238px;
+	height: 70px;
+	background-image: url('img/startBtn.png');
+	top: 920px; left: 554px;
+	cursor: pointer;
+}
+#intro .flashingBtn{
+	position: absolute;
+    width: 212px;
+    height: 44px;
+    pointer-events: none;
+	background-color: #fff;
+	opacity: 0;
+	border-radius: 10px;
+	box-shadow: 0 0 13px rgba(255, 255, 255, 1);
+    top: 934px;
+	left: 567px;
+
+	animation: blink 1s infinite;
+}
+@keyframes blink { 
+	  0% { opacity: 0; } 
+	 70% { opacity: 0.65; } 
+	100% { opacity: 0; } 
+ }
+#intro img{
+    top: 200px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 242px;
+}
+
+.intText {
+	position: absolute;
+    width: 100%;
+    top: 1000px;
+    left: 0;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0;
+	line-height: 1;
+	color: #fff;
+}
+
+/* Activity Area */
+#activityArea{
+	width: 1344px;
+	height: 1080px;
+	background-size: contain;
+	font-family: 'Frutiger';
+    font-weight: normal;
+	font-style: normal;
+	box-sizing: border-box;
+	border-radius: 70px;
+	overflow: hidden;
+	background-color: #eeeeee;
+}
+
+#activityArea .footerBg{
+	height: 76px;
+}
+
+#updateText{
+	text-align: left;
+    color: #000;
+    font-size: 36.2px;
+    font-weight: bold;
+	margin: 65px 128px;
+	margin-bottom: 40px;
+    line-height: 1.25;
+}
+
+
+
+/* Buttons */
+span[class^="btn_"] {
+	position: absolute;
+	cursor: pointer;
+	z-index: 10;
+	color: #ccc;
+	font-size: 36px;
+    font-weight: bold;
+	text-shadow: 1px 4px #000;
+}
+span[class^="btn_"] {	
+    position: absolute;	
+    cursor: pointer;	
+    z-index: 10;	
+    color: #ccc;	
+    font-size: 27px;	
+    font-weight: bold;	
+}
+span[class^="btn_"]:hover{
+	color: #00CC00
+}
+.btn_intro{
+	width: 50px;	
+    height: 36px;	
+    top: 1015px;	
+    left: 33px;	
+    background-image: url(img/introBtn.png);
+}
+.btn_intro:hover{
+	background-image: url('img/introBtn.png');
+	background-position: -145px 0;
+}
+
+	
+#vertical_big{	
+    width: 5px;	
+    background-color: #999999;	
+    height: 50px;	
+    top: 1008px;	
+    left: 180px;	
+    position: absolute;	
+}	
+#vertical_small{	
+	width: 5px;	
+    background-color: #999999;	
+    height: 35px;	
+    top: 1014px;	
+    left: 700px;	
+    position: absolute;	
+}	
+h4{	
+	position: absolute;	
+    left: 50px;	
+    top: 3px;
+    cursor: pointer;	
+}	
+.radio{	
+	position: relative;	
+    top: 28px;	
+    left: 345px;	
+  }	
+  .right-radio input[type=radio]{	
+	visibility: hidden;	
+  }	
+  .right-radio p {	
+	margin: 10px 0px 20px 50px;	
+  	
+  }	
+  .right-radio input[type=radio] + label{	
+	/* display: none; */	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	position: absolute;	
+	top:-9px;	
+	background-image: url('../media/img/button0002.png');	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	margin-left: 9px;
+    cursor: pointer;	
+  }	
+  .right-radio input[type=radio]:checked + label{	
+	/* display: none; */	
+	/* opacity: 1; */	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	background-image: url('../media/img/button0001.png');	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	position: absolute;	
+	top:-9px;	
+	margin-left: 9px;
+    cursor: pointer;	
+  	
+ }	
+h6{	
+	font-size: 40px;	
+    position: absolute;	
+    top: 1011px;	
+    left: 223px;	
+    color: #d0c9c9;	
+}	
+#abc{	
+	color: #d0c9c9;	
+    font-size: 44px;	
+    position: relative;	
+    top: -10px;	
+    left: 11px;	
+}	
+
+.ProblemArea_1, .ProblemArea_2, .SolutionArea {
+	padding: 50px;
+} 
+
+.ProblemType, .ProblemExpression, .SolutionInstruction, .RotateBreakInstruction {
+    color: #000;
+    font-size: 36.2px;
+	margin-bottom: 40px;
+    line-height: 1.25;
+}
+
+.RotateBreakInstruction{
+	font-size: 35.2px;
+}
+
+.ProblemType {
+	font-weight: bold;
+}
+
+#inputTop{
+    position: absolute;
+    font-size: 39px;
+    left: 73px;
+    color: #7a7676
+}
+
+
+
+/* #instruction */
+#instruction{
+	position: absolute;
+	width: 1344px; height: 1162px;
+	background-image: url('img/insBg.png');
+	top: 987px;
+	pointer-events: none;
+	z-index: 10;
+	background-repeat: no-repeat;
+    background-position-y: 6px;
+}
+#instruction > * {
+	pointer-events: auto;
+}
+#instruction .topBtn, #instruction .bottomBtn {
+	font-size: 36px;
+    font-weight: bold;
+	font-style: normal;
+	color: #fff;
+	position: absolute;
+	right: 80px;
+	cursor: pointer;
+}
+#instruction .topBtn:hover, #instruction .bottomBtn:hover {
+	color: #00CC00
+}
+#instruction .topBtn{ top: 26px; }
+#instruction .bottomBtn{ bottom: 18px; }
+
+.insContent {
+	pointer-events: auto;
+	position: absolute; top: 145px;
+	width: 100%; height: 880px;
+	color: #fff;
+	font-size: 42px;
+	font-weight: 600;
+}
+
+.insContent ol {
+	margin: 190px 90px 0 215px;
+}
+.insContent ol li {
+	margin: 62px 66px;
+}
+
+.hidden { visibility: hidden; }
+.pnone, .solutionSection span.yellowBorder.pnone { pointer-events: none; }
+.machine{
+	background-image: url('../image/M_fade.png');
+	background-repeat: no-repeat;
+	width: 1485px;
+    height: 992px;
+    background-size: 58%;
+    background-position: 441px 2px;
+}
+.left-part{
+	position: relative;
+    top: 222px;
+    left: 38px;
+    height: 725px;
+    width: 447px;
+	background-color: #ddd;
+}
+.left-part h1{
+	position: absolute;
+    top: 20px;
+    left: 50px;
+    margin: 22px auto;
+    font-size: 36px;
+}
+table{
+	width: 84%;
+    font-size: xx-large;
+    position: absolute;
+    top: 123px;
+    left: inherit;
+    border-collapse: collapse;
+}
+td{
+	background-color: #ffff;
+    border: 1px solid gray;
+    text-align: center;
+    height: 40px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+th{
+	padding-bottom: 10px;
+}
+.test-input{
+    position: absolute;
+    top: 400px;
+    left: inherit;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.outputButton{
+	width: 171px;
+    padding: 3px 0px;
+    background-color: #ccc;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 2px solid #ffff;
+    border-left: 2px solid #ffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.test-input span:nth-child(1){
+	padding: 25px;
+}
+.blank-input{
+	position: absolute;
+    top: 475px;
+    left: inherit;
+}
+.blank-input input{
+	height: 45px;
+	width: 173px;
+	background-color: #fff ;
+    -webkit-background-color: #fff ;
+	font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+.blank-input button{
+	width: 303px;
+    padding: 3px 0px;
+    background-color: #ccc;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid #ffff;
+    border-left: 2px solid #ffff;
+    font-weight: bold;
+    height: 56px;
+    font-size: xx-large;
+    margin: 30px;
+    cursor: pointer;
+}
+.intro-image{
+	background-image: url(../image/AS1.png);
+    background-size: 532px;
+    height: 532px;
+    width: 537px;
+    background-repeat: no-repeat;
+	margin: 70px auto;
+	position: relative;
+}
+ .intro-image #three ,#ques,#six,#ques1{
+	position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    top: 30px;
+    left: 131px;
+}
+#ques{
+	top: 28px;
+	left: 386px;
+}
+#six{
+	top: 389px;
+    left: 260px;
+}
+
+#blank-input-dec{
+	transform: rotate(180deg);
+    height: 47px;
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    cursor: pointer;
+}
+#blank-input-inc{
+	height: 47px;
+    position: absolute;
+    left: 177px;
+    top: 1px;
+    cursor: pointer;
+}
+#left-input{
+    height: 45px;
+    width: 150px;
+	margin: 0px 23px;
+	background-color: #fff ;
+    -webkit-background-color: #fff ;
+	font-size: 32px;
+    font-weight: bold;
+	text-align: center;
+	color: black;
+}
+#right-input{
+	color: black;
+}
+#algoResult{
+	position: absolute;
+    top: 150px;
+    font-size: 32px;
+    font-weight: bold;
+	left: 30px;
+	display: none;
+}
+.dull{
+	pointer-events: none;
+	opacity: 0.5;
+}
+#ques1{
+	top: 202px;
+    left: 256px;
+}
+.right-part{
+	height: 100%;
+    width: 68%;
+    position: absolute;
+    left: 33%;
+}
+.machine1{
+	height: 47%;
+    width: 50%;
+}
+#machine-0-input-1{
+	height: 45px;
+    width: 150px;
+    margin: 0px 23px;
+    background-color: #bbc8ed ;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 11px;
+
+}
+#machine1-inc {
+    height: 47px;
+    position: absolute;
+    left: 182px;
+	top: 71px;
+	cursor: pointer;
+}
+#machine1-dec {
+	transform: rotate(
+180deg
+		);
+			height: 47px;
+			cursor: pointer;
+			position: absolute;
+			left: 11px;
+			top: 69px;
+}
+#machine-0-input-2{
+	height: 45px;
+    width: 145px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 212px;
+
+}
+#machine1-inc2 {
+    height: 47px;
+    position: absolute;
+    left: 379px;
+	top: 71px;
+	cursor: pointer;
+}
+#machine1-dec2 {
+	transform: rotate(
+180deg
+		);
+			height: 47px;
+			cursor: pointer;
+			position: absolute;
+			left: 211px;
+			top: 71px;
+}
+#aritmaticbtn1{
+	height: 21%;
+    width: 59%;
+    position: relative;
+    top: 181px;
+    left: 70px;
+}
+
+#aritmaticbtn1 input[type=radio] + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	position: absolute;	
+	top: 28px;	
+	background-image: url("../image/airt.png");	
+	background-repeat: no-repeat;	
+	background-size: cover;
+    cursor: pointer;	
+  }
+
+#aritmaticbtn1 input[type=radio]:checked + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	background-image: url('../image/airthH.png');	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	position: absolute;	
+	top: 28px;	
+    cursor: pointer;	
+ }
+
+ #mp1{
+    position: absolute;
+    left: 11px;
+    top: -2px;
+    font-size: 43px;
+    cursor: pointer;
+}
+#md1{ position: absolute;
+    left: 18px;
+    top: 2px;
+    font-size: 32px;
+    cursor: pointer;
+}
+#mi1{
+position: absolute;
+top: 0px;
+left: 13px;
+font-size: 35px;
+cursor: pointer;
+}
+#mm1{
+    position: absolute;
+    left: 15px;
+    top: -27px;
+    font-size: 74px;
+    font-weight: initial;
+    cursor: pointer;
+}
+#aritmaticbtn1 input[type=radio]{	
+	visibility: hidden;	
+  }
+
+  #oper{	
+    position: relative;
+    left: 61px;
+    z-index: 1;
+    font-size: 30px;
+    top: -5px;
+ }
+
+#machine-0-output{
+	height: 45px;
+    width: 160px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 341px;
+    left: 100px;
+    overflow: hidden;
+    /* text-align:left; */
+}
+.machine-0-output[type="text"]{
+    padding:10px;
+  }
+/* machine second  */
+.machine2{
+	height: 47%;
+    width: 50%;
+    position: relative;
+    top: -47%;
+    left: 50%;
+}
+#machine-1-input-1{
+	height: 45px;
+    width: 150px;
+    margin: 0px 23px;
+    background-color:#bbc8ed ;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 11px;
+
+}
+
+#machine-1-input-2{
+	height: 45px;
+    width: 145px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 212px;
+
+}
+#machine2-inc2 {
+    height: 47px;
+    position: absolute;
+    left: 379px;
+	top: 71px;
+	cursor: pointer;
+}
+#machine2-dec2 {
+	transform: rotate(
+180deg
+		);
+			height: 47px;
+			cursor: pointer;
+			position: absolute;
+			left: 211px;
+			top: 71px;
+}
+#aritmaticbtn2{
+    height: 21%;
+    width: 59%;
+    position: relative;
+    top: 181px;
+    left: 70px;
+
+}
+/* -------------- */
+#aritmaticbtn2 input[type=radio] + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	position: absolute;	
+	top: 28px;	
+	background-image: url("../image/airt.png");	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+    cursor: pointer;
+  }
+
+#aritmaticbtn2 input[type=radio]:checked + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	background-image: url('../image/airthH.png');	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	position: absolute;	
+	top: 28px;
+    cursor: pointer;		
+ }
+
+ #mp2{
+    position: absolute;
+    left: 11px;
+    top: -2px;
+    font-size: 43px;
+    cursor: pointer;
+}
+#md2{ position: absolute;
+    left: 18px;
+    top: 2px;
+    font-size: 32px;
+    cursor: pointer;
+}
+#mm2{
+    position: absolute;
+    left: 15px;
+    top: -27px;
+    font-size: 74px;
+    font-weight: initial;
+    cursor: pointer;
+}
+#mi2{
+    position: absolute;
+    top: 0px;
+    left: 13px;
+    font-size: 35px;
+    cursor: pointer;
+    }
+#aritmaticbtn2 input[type=radio]{	
+	visibility: hidden;	
+  }
+
+  #oper{	
+    position: relative;
+    left: 61px;
+    z-index: 1;
+    font-size: 30px;
+    top: -5px;
+ }
+/* ------------ */
+#machine-1-output{
+	height: 45px;
+    width: 160px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 341px;
+    left: 101px;
+    overflow: hidden;
+}
+/* machine 3 */
+.machine3{
+	height: 47%;
+    width: 50%;
+    position: absolute;
+    top: 525px;
+    left: 233px;
+	
+}
+#machine-2-input-1{
+	height: 45px;
+    width: 150px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 11px;
+
+}
+
+#machine-2-input-2{
+	height: 45px;
+    width: 145px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+	color: black;
+	position: absolute;
+    top: 70px;
+    left: 212px;
+
+}
+#machine3-inc2 {
+    height: 47px;
+    position: absolute;
+    left: 379px;
+	top: 71px;
+	cursor: pointer;
+}
+#machine3-dec2 {
+	transform: rotate(
+180deg
+		);
+			height: 47px;
+			cursor: pointer;
+			position: absolute;
+			left: 211px;
+			top: 71px;
+}
+#aritmaticbtn3{
+	height: 21%;
+    width: 54%;
+    position: relative;
+    top: 212px;
+    left: 57px;
+
+}
+
+/*-----------*/
+#aritmaticbtn3 input[type=radio] + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	position: absolute;	
+	top:-9px;	
+	background-image: url("../image/airt.png");	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	margin-left: 9px;
+    cursor: pointer;
+  }
+
+#aritmaticbtn3 input[type=radio]:checked + label{	
+	height: 2.8rem;	
+	width: 2.8rem;	
+	background-image: url('../image/airthH.png');	
+	background-repeat: no-repeat;	
+	background-size: cover;	
+	position: absolute;	
+	top:-9px;	
+	margin-left: 9px;
+    cursor: pointer;		
+ }
+
+ #mp3{
+    position: absolute;
+    left: 11px;
+    top: -2px;
+    font-size: 43px;
+    cursor: pointer;
+}
+#md3{ position: absolute;
+    left: 18px;
+    top: 2px;
+    font-size: 32px;
+    cursor: pointer;
+
+}
+#mi3{
+    position: absolute;
+    top: 0px;
+    left: 13px;
+    font-size: 35px;
+    cursor: pointer;
+    }
+#mm3{
+    position: absolute;
+    left: 15px;
+    top: -27px;
+    font-size: 74px;
+    font-weight: initial;
+    cursor: pointer;
+}
+#aritmaticbtn3 input[type=radio]{	
+	visibility: hidden;	
+  }
+
+  #oper{	
+    position: relative;
+    left: 61px;
+    z-index: 1;
+    font-size: 30px;
+    top: -5px;
+ }
+/*---------------*/
+
+#machine-2-output{
+	height: 45px;
+    width: 149px;
+    margin: 0px 23px;
+    background-color: #bbc8ed;
+    -webkit-background-color: #bbc8ed ;
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 341px;
+    left: 105px;
+
+}
+#reset{
+    position: absolute;
+    top: 81%;
+    left: 81%;
+    height: 46px;
+    width: 99px;
+    cursor: pointer;
+
+}
+#reset  :hover{
+	background-image: url(../image/Reset_H.png);
+	
+}
+#hideImage{
+    border-style: none;
+    position: absolute;
+    top: 67%;
+    left: 37%;
+    height: 81px;
+    width: 207px;
+
+}
+.error1{
+    position: absolute;
+    top: 31px;
+    z-index: 1;
+    left: 222px;
+}
+.error2{
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 676px;
+}
+.error3{
+    position: absolute;
+    top: 553px;
+    z-index: 1;
+    left: 457px;
+}
+/* #aritmaticbtn input{
+    background-image: url(../image/airt.png);
+} */
+
+#animate-output-0{
+    height: 45px;
+    width: 149px;
+    margin: 0px 23px;
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 347px;
+    left: 107px;
+    overflow: hidden;
+    /* animation-name: example;
+    animation-duration: 1s; */
+    /* animation-iteration-count: infinite; */
+}
+
+  @keyframes example {
+    0%   { left:107px; top:347px; }
+    20%  { left:116px; top:425px;transform: rotate(45deg);}
+    40%  { left:325px; top:425px;transform: rotate(0deg);}
+    60%  { left:337px; top:5px;transform: rotate(45deg);}
+    80%  { left:464px; top:0px;transform: rotate(0deg);}
+    100% { left:464px; top:70px;}
+  }
+
+  #animate-output-1{
+    height: 45px;
+    width: 149px;
+    margin: 0px 23px;
+    font-size: 33px;
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 348px;
+    left: 108px;
+    overflow: hidden;
+  }
+  @keyframes example1 {
+    0%   { left:107px; top:347px; }
+    33%  { left:107px; top:480px;transform: rotate(45deg);}
+    /* 35%  { left:107px; top:480px;transform: rotate(45deg);} */
+    66%  { left:-205px; top:480px;transform: rotate(90deg);}
+    70%  { left:-205px; top:480px;transform: rotate(0deg);}
+    100%  { left:-205px; top:590px;}
+    /* 100%  { left:-205px; top:590px;} */
+    /* 100% { left:464px; top:70px;} */
+  }
+  .disable-dbl-tap-zoom {
+    touch-action: manipulation;
+  }
+  /* @media screen and (min-width: 768px) {
+    body {
+      background-color: lightgreen;
+    }
+  } */
+  @supports (-webkit-touch-callout: none) {
+    .blank-input input{
+        background-color: #fff ;
+        -webkit-background-color: #fff ;
+    }
+    .blank-input button{
+        background-color: #ccc;
+    }
+    #left-input{
+        -webkit-background-color: #fff;
+    }
+    #machine-0-input-1{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+    #machine-0-input-2{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;   
+    }
+    #machine-0-output{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+    #machine-1-input-1{
+        background-color:#bbc8ed ;
+        -webkit-background-color: #bbc8ed; 
+    }
+    #machine-1-input-2{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+    #machine-1-output{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+    #machine-2-input-1{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }   
+    #machine-2-input-2{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+    #machine-2-output{
+        background-color: #bbc8ed;
+        -webkit-background-color: #bbc8ed;
+    }
+  }

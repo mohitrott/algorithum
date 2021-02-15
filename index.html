@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type"  content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<link rel="icon" />
+	<title>Algorithm</title>
+	<link rel="stylesheet" type="text/css" href="media/style.css" />
+	<script type="text/javascript" src="media/angular.js"></script>
+</head>
+
+<body class="disable-dbl-tap-zoom">
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<div id="wrapper">
+			<!-- Screen 1 - Intro -->
+			<div id="intro" ng-show="inroPage">
+				<h2>Guess My Rule <br> Use the function machine to help you guess a mystery algorithm. Each has two or
+					three steps.
+					Try to guess using as few output requests as possible.</h2>
+				<div class="intro-image">
+					<img src="./image/airt.png" alt="" srcset="">
+					<p id="three">3</p>
+					<p id="ques">?</p>
+					<p id="six">6</p>
+					<p id="ques1">?</p>
+				</div>
+				<span class="footerBg"></span>
+				<span class="flashingBtn"></span>
+				<div tabindex="0" role="button" aria-label="Start" class="startButton" ng-click="toggleView()"
+					onclick="start()"></div>
+				<div class="intText">Interactive Activity</div>
+			</div>
+			<!-- Screen 2 - Activity -->
+			<div id="activityArea" ng-show="!inroPage">
+				<div class="machine">
+					<div class="right-part">
+						<span><b id="inputTop" id>Input</b></span>
+						<div class="error1" style="display: none;"><img src="./image/Division.png"></div>
+						<div class="error2" style="display: none;"><img src="./image/Division.png"></div>
+						<div class="error3" style="display: none;"><img src="./image/Division.png"></div>
+
+						<!-- machine 1 -->
+						<div class="machine1">
+							<!-- machine one 1st input area -->
+							<img src="./image/Btn.png" alt="" srcset="" tabindex="0" role="button" id="machine1-dec"
+								onclick="machineDecrement(0, 1, 1)" onmouseenter="mouseOverDec(event)"
+								onmouseleave="mouseOutDec(event)">
+							<input type="text" id="machine-0-input-1" name="value1" disabled>
+							<img src="./image/Btn.png" alt="" srcset="" id="machine1-inc" tabindex="0" role="button"
+								onclick="machineIncrement(0, 1, 1)" onmouseenter="mouseOverInc(event)"
+								onmouseleave="mouseOutInc(event)">
+							<!-- machine one 2nd input area -->
+							<img src="./image/Btn.png" alt="" srcset="" id="machine1-dec2"
+								onclick="machineDecrement(0, 2, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverDec(event)" onmouseleave="mouseOutDec(event)">
+							<input type="text" id="machine-0-input-2" name="value1" disabled>
+							<img src="./image/Btn.png" alt="" srcset="" id="machine1-inc2"
+								onclick="machineIncrement(0, 2, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverInc(event)" onmouseleave="mouseOutInc(event)">
+							<!-- Arithmetic button  -->
+							<div id="aritmaticbtn1">
+								<b id="oper" style="margin-left: 14px;"></b>
+								<input type="radio" name="mp1" value="+" class="plus" id="plus"
+									onclick="performMachineOperation(0,event)" />
+								<label for="plus" tabindex="0" role="radiogroup"><b id="mp1">+</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp1" value="-" class="minus" id="minus"
+									onclick="performMachineOperation(0,event)" />
+								<label for="minus" tabindex="0" role="radiogroup"><b id="mm1">-</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp1" value="x" class="mul" id="mul"
+									onclick="performMachineOperation(0,event)" />
+								<label for="mul" tabindex="0" role="radiogroup"><b id="mi1">x</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp1" value="/" class="div" id="div"
+									onclick="performMachineOperation(0,event)" />
+								<label for="div" tabindex="0" role="radiogroup"><b id="md1">/</b></label>
+							</div>
+							<input type="text" id="machine-0-output" name="value1" disabled>
+							<span id="animate-output-0"></span>
+						</div>
+
+						<!-- machine 2 -->
+						<div class="machine2">
+							<!-- machine second 1st input area -->
+							<input type="text" id="machine-1-input-1" name="value2" disabled>
+							<!-- machine second 2nd input area -->
+							<img src="./image/Btn.png" alt="" srcset="" id="machine2-dec2"
+								onclick="machineDecrement(1, 3, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverDec(event)" onmouseleave="mouseOutDec(event)">
+							<input type="text" id="machine-1-input-2" name="value2" disabled>
+							<img src="./image/Btn.png" alt="" srcset="" id="machine2-inc2"
+								onclick="machineIncrement(1, 3, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverInc(event)" onmouseleave="mouseOutInc(event)">
+							<!-- Arithmetic button  -->
+							<div id="aritmaticbtn2">
+								<b id="oper" style="margin-left: 14px;"></b>
+								<input type="radio" name="mp2" value="+" class="plus2" id="plus2"
+									onclick="performMachineOperation(1,event)" />
+								<label for="plus2" tabindex="0" role="button"><b id="mp2">+</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp2" value="-" class="minus2" id="minus2"
+									onclick="performMachineOperation(1,event)" />
+								<label for="minus2" tabindex="0" role="button"><b id="mm2">-</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp2" value="x" class="mul2" id="mul2"
+									onclick="performMachineOperation(1,event)" />
+								<label for="mul2" tabindex="0" role="button"><b id="mi2">x</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp2" value="/" class="div2" id="div2"
+									onclick="performMachineOperation(1,event)" />
+								<label for="div2" tabindex="0" role="button"><b id="md2">/</b></label>
+
+							</div>
+							<input type="text" id="machine-1-output" name="value2" disabled>
+							<span id="animate-output-1"></span>
+						</div>
+
+
+						<!-- machine 3 -->
+						<div class="machine3">
+							<input type="text" id="machine-2-input-1" name="value3" disabled>
+							<!-- machine second 3rd input area -->
+							<img src="./image/Btn.png" alt="" srcset="" id="machine3-dec2"
+								onclick="machineDecrement(2, 4, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverDec(event)" onmouseleave="mouseOutDec(event)">
+							<input type="text" id="machine-2-input-2" name="value3" disabled>
+							<img src="./image/Btn.png" alt="" srcset="" id="machine3-inc2"
+								onclick="machineIncrement(2, 4, 2)" tabindex="0" role="button"
+								onmouseenter="mouseOverInc(event)" onmouseleave="mouseOutInc(event)">
+							<!-- Arithmetic button  -->
+							<div id="aritmaticbtn3">
+								<b id="oper" style="margin-left: 14px;"></b>
+								<input type="radio" name="mp3" value="+" class="plus3" id="plus3"
+									onclick="performMachineOperation(2,event)" />
+								<label for="plus3" tabindex="0" role="radiogroup"><b id="mp3">+</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp3" value="-" class="minus3" id="minus3"
+									onclick="performMachineOperation(2,event)" />
+								<label for="minus3" tabindex="0" role="radiogroup"><b id="mm3">-</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp3" value="x" class="mul3" id="mul3"
+									onclick="performMachineOperation(2,event)" />
+								<label for="mul3" tabindex="0" role="radiogroup"><b id="mi3">x</b></label>
+								<b style="margin-left: 40px" id="oper"></b>
+								<input type="radio" name="mp3" value="/" class="div3" id="div3"
+									onclick="performMachineOperation(2,event)" />
+								<label for="div3" tabindex="0" role="radiogroup"><b id="md3">/</b></label>
+
+							</div>
+							<input type="text" id="machine-2-output" name="value3" disabled >
+						</div>
+
+
+						<!-- hide area -->
+						<img src="./image/hide.png" id="hideImage">
+					</div>
+					<div class="left-part">
+						<h1>Mystery Algorithm A</h1>
+						<table>
+							<tr>
+								<th>Input</th>
+								<th>Output</th>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>14</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+						<div class="test-input">
+							<span>Test Input</span>
+							<button class="outputButton" tabindex="0" role="button"
+								onclick="numberOutput()">Output</button>
+						</div>
+						<div class="blank-input">
+							<img src="./image/Btn.png" alt="" srcset="" id="blank-input-dec" tabindex="0" role="button"
+								onclick="testDecrement()" onmouseenter="mouseOverImageDec()"
+								onmouseleave="mouseOutImageDec()">
+							<input type="text" id="left-input" disabled>
+							<img src="./image/Btn.png" alt="" srcset="" id="blank-input-inc" tabindex="0" role="button"
+								onclick="testIncrement()" onmouseenter="mouseOverImageInc()"
+								onmouseleave="mouseOutImageInc()">
+							<input type="text" id="right-input" disabled>
+							<button onclick="showFormula()" tabindex="0" role="button" id="toggelAlgo">Reveal
+								Algorithm</button>
+							<div id="algoResult">
+								<p>(Input + 5) x 2 = Output</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<img id="reset" src="./image/Reset.png" onmouseenter="mouseOverReset()" onmouseleave="mouseOutReset()"
+					onclick="reset()" tabindex="0" role="button">
+				<span class="footerBg"></span>
+				<!-- Buttons -->
+				<span tabindex="0" role="button" aria-label="intro" class="btn_intro" ng-click="toggleView()">
+					<h4>INTRO</h4>
+				</span>
+				<span id="vertical_big">
+				</span>
+				<h6>Problem:</h6></span>
+				<div class="select">
+
+					<div class="radio">
+						<span class="right-radio">
+							<b style="margin-left: 72px" id="abc">A</b>
+							<input class="radiobtn" type="radio" name="select" id="a" checked>
+							<label for="a" tabindex="0" role="button" onclick="SelectProblem('a')"></label>
+						</span>
+						<span class="right-radio">
+							<b style="margin-left: 72px" id="abc">B</b>
+							<input type="radio" name="select" id="b">
+							<label for="b" tabindex="0" role="button" onclick="SelectProblem('b')"></label>
+						</span>
+						<span class="right-radio">
+							<b style="margin-left: 72px" id="abc">C</b>
+							<input type="radio" name="select" id="c">
+							<label for="c" tabindex="0" role="button" onclick="SelectProblem('c')"></label>
+						</span>
+
+					</div>
+					<!-- Insutruction -->
+					<div id="instruction">
+						<div tabindex="0" role="button" aria-label="Open Instructions" class="topBtn"
+							ng-click="toggleIns(2)">Open Instructions</div>
+						<div tabindex="-1" role="button" aria-label="Close Instructions" class="bottomBtn"
+							ng-click="toggleIns(1)">Close Instructions</div>
+						<div class="insContent">
+							<ol>
+								<li ng-repeat="i in insContent" ng-bind-html="i | to_trusted"></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="media/jquery.js"></script>
+	<script type="text/javascript" src="media/controller.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+</body>
+
+</html>
